@@ -1,21 +1,26 @@
 <script setup lang="ts">
 
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import { useDisplay } from 'vuetify'
 
-const { smAndDown } = useDisplay()
+const { mdAndDown } = useDisplay()
 
-const isMobile = computed(() => smAndDown.value)
+const isMobile = computed(() => mdAndDown.value)
+
+onMounted(() => {
+  console.log(isMobile.value) // false
+})
 
 const items = [
-  'Profile',
-  'Discography',
-  'Filmography',
-  'Achievements & Activities',
-  'Archive',
+  { title: 'Profile', to: '/profile' },
+  { title: 'Discography', to: '/discography' },
+  { title: 'Filmography', to: '/filmography' },
+  { title: 'Achievements & Activities', to: '/activities' },
+  { title: 'Archive', to: '/archive' },
 ]
 
-const tab = ref('one')
+
+const tab = null
 
 </script>
 
@@ -33,13 +38,15 @@ const tab = ref('one')
         v-model="tab"
         align-tabs="center"
         color="light-blue-darken-3"
+        slider-transition="grow"
       >
         <v-tab
           v-for="item in items"
-          :key="item"
+          :key="item.title"
+          :to="item.to"
           class="nav-tab font-weight-bold text-h5 text-uppercase ga-2"
         >
-          {{ item }}
+          {{ item.title }}
         </v-tab>
       </v-tabs>
     </v-col>
@@ -52,53 +59,22 @@ const tab = ref('one')
       md="6"
       class="text-center hero-wrapper"
     >
-      <h1 class="name">An Yujin</h1>
-
-      <img src="../assets/165d6b709bf83208c0f45da144441051.png" alt="An Yujin" />
-
-      <h2 class="title">
-        THE ULTIMATE ALL-ROUNDER
-        <br/>
-        AN YUJIN
-      </h2>
-
-      <p class="subtitle">
-        IVE'S LEADER, MAIN VOCALIST, MAIN DANCER | BRAND AMBASSADOR & MODEL
-        <br />
-        MC & VARIETY STAR | SOLO
-        <br />
-        AWARDS | 2024 BAEKSANG
-      </p>
     </v-col>
   </v-row>
 
 </v-container>
+
+<v-breadcrumbs></v-breadcrumbs>
 </template>
 
 <style>
 
+.v-tab:hover {
+  text-decoration: underline;
+}
+
 .hero-wrapper {
   position: relative;
-}
-
-.name {
-  font-family: 'Cursive';
-  position: absolute;
-  top: 3rem;
-  left: 48%;
-
-}
-
-.title {
-  font-weight: 800;
-  letter-spacing: 0.2em;
-  margin-top: 2rem;
-}
-
-.subtitle {
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
-  margin-top: 1rem;
 }
 
 </style>
