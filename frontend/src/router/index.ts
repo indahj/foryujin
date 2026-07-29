@@ -12,31 +12,49 @@ const routes = [
     path: '/',
     name: 'Home',
     component: HomePage,
+    meta: {
+      breadcrumb: 'Home'
+    }
   },
   {
     path: '/profile',
     name: 'Profile',
     component: ProfilePage,
+    meta: {
+      breadcrumb: 'Profile'
+    }
   },
   {
     path: '/discography',
     name: 'Discography',
     component: DiscographyPage,
+    meta: {
+      breadcrumb: 'Discography'
+    }
   },
   {
     path: '/filmography',
     name: 'Filmography',
     component: FilmographyPage,
+    meta: {
+      breadcrumb: 'Filmography'
+    }
   },
   {
     path: '/activities',
     name: 'Achievements & Activities',
     component: ActivityPage,
+    meta: {
+      breadcrumb: 'Achievements & Activities'
+    }
   },
   {
     path: '/archive',
     name: 'Archive',
     component: ArchivePage,
+    meta: {
+      breadcrumb: 'Archive'
+    }
   },
 ]
 
