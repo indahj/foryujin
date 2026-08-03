@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import HomePage from '@/HomePage.vue'
-import DiscographyPage from '@/DiscographyPage.vue'
-import FilmographyPage from '@/FilmographyPage.vue'
-import ActivityPage from '@/ActivityPage.vue'
-import ArchivePage from '@/ArchivePage.vue'
-import ProfilePage from '@/ProfilePage.vue'
+import HomePage from '@/views/HomePage.vue'
+import DiscographyPage from '@/views/DiscographyPage.vue'
+import FilmographyPage from '@/views/FilmographyPage.vue'
+import ActivityPage from '@/views/ActivityPage.vue'
+import ArchivePage from '@/views/ArchivePage.vue'
+import ProfilePage from '@/views/ProfilePage.vue'
 
 const routes = [
   {
