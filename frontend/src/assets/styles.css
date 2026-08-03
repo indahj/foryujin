@@ -1,0 +1,20 @@
+:root {
+  /* color */
+  --color-ink: #1c1420;          /* near-black plum, not pure black */
+  --color-ink-soft: #6b5f68;     /* muted body text */
+  --color-accent: #00b4d8;       /* Yujin's official rep color: magenta */
+  --color-accent-soft: #f6c9e0;  /* pale magenta for washes/hovers */
+  --color-gold: #c9a227;         /* secondary "spotlight" accent */
+  --color-card: #ffffff;
+  --color-hover: #03687ffb;
+
+  /* type */
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Menlo, monospace;
+
+  /* layout */
+  --radius: 2px;
+  --container: 960px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+}
